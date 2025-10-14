@@ -57,6 +57,7 @@ const Add = ({url}) => {
   return (
     <div className="add">
       <form onSubmit={onSubmitHandler} className="flex-col">
+        <h2>Add New Food Item</h2>
         <div className="add-img-upload flex-col">
           <p>Upload image</p>
           <label htmlFor="image">
