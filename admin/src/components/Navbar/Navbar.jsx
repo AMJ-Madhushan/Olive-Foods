@@ -25,7 +25,7 @@ const Navbar = () => {
         ) : (
           <p className="login-conditon" onClick={()=>navigate("/")}>Login</p>
         )}
-        <img className="profile" src={assets.profile_image} alt="" />
+        {/* <img className="profile" src={assets.profile_image} alt="" /> */}
       </div>
     </div>
   );
