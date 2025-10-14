@@ -17,6 +17,12 @@ const Navbar = ({ setShowLogin }) => {
       case "/":
         setMenu("home");
         break;
+      case "/menu":
+        setMenu("menu");
+        break;
+      case "/contact":
+        setMenu("contact-us");
+        break;
       case "/about-us":
         setMenu("about-us");
         break;
@@ -45,27 +51,20 @@ const Navbar = ({ setShowLogin }) => {
         >
           home
         </Link>
-        <a
-          href="#explore-menu"
+        <Link
+          to="/menu"
           onClick={() => setMenu("menu")}
           className={menu === "menu" ? "active" : ""}
         >
           menu
-        </a>
-        <a
-          href="#app-download"
-          onClick={() => setMenu("mobile-app")}
-          className={menu === "mobile-app" ? "active" : ""}
-        >
-          mobile-app
-        </a>
-        <a
-          href="#footer"
+        </Link>
+        <Link
+          to="/contact"
           onClick={() => setMenu("contact-us")}
           className={menu === "contact-us" ? "active" : ""}
         >
           contact us
-        </a>
+        </Link>
         <Link
           to="/about-us"
           onClick={() => setMenu("about-us")}
