@@ -6,16 +6,17 @@ export default function AboutUs() {
     <div className="about-us-container">
       {/* Hero Section */}
       <section className="hero-section">
-        <h1>About TechDoc Solutions</h1>
-        <p>We create innovative software and hardware solutions that drive digital transformation.</p>
+        <h1>About Olive Foods</h1>
+        <p>Your premier destination for delicious, fresh food delivered right to your doorstep. Experience the convenience of modern Olive Foods delivery with quality you can trust.</p>
       </section>
 
-      {/* Company Mission */}
+      {/* Application Mission */}
       <section className="mission-section">
         <h2>Our Mission</h2>
         <p>
-          At TechDoc Solutions, our mission is to deliver top-notch web, mobile, and AI-driven solutions that empower businesses to grow and innovate. 
-          We combine creativity, technology, and expertise to bring your ideas to life.
+          At Olive Foods, our mission is to revolutionize the Olive Foods delivery experience by connecting customers with 
+          the finest restaurants and culinary experiences. We strive to make quality food accessible, convenient, 
+          and enjoyable for everyone, while supporting local businesses and promoting sustainable food practices.
         </p>
       </section>
 
@@ -24,39 +25,44 @@ export default function AboutUs() {
         <h2>Our Core Values</h2>
         <div className="values-cards">
           <div className="value-card">
+            <h3>Quality First</h3>
+            <p>We partner only with the finest restaurants and ensure every meal meets our high standards for freshness and taste.</p>
+          </div>
+          <div className="value-card">
+            <h3>Customer Satisfaction</h3>
+            <p>Your happiness is our priority. We go above and beyond to ensure every order exceeds your expectations.</p>
+          </div>
+          <div className="value-card">
             <h3>Innovation</h3>
-            <p>We constantly push boundaries to create cutting-edge solutions for our clients.</p>
-          </div>
-          <div className="value-card">
-            <h3>Integrity</h3>
-            <p>We value transparency and honesty in every project and relationship.</p>
-          </div>
-          <div className="value-card">
-            <h3>Excellence</h3>
-            <p>We deliver solutions with high quality and focus on exceeding expectations.</p>
+            <p>We continuously improve our platform with cutting-edge technology to make Olive Foods delivery faster and more convenient.</p>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Developer Section */}
       <section className="team-section">
-        <h2>Meet Our Team</h2>
+        <h2>Meet the Developer</h2>
+        <p>This application has been designed and developed by:</p>
         <div className="team-cards">
           <div className="team-card">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" />
-            <h3>John Doe</h3>
-            <p>CEO & Founder</p>
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Janitha Madushan" />
+            <h3>Janitha Madushan</h3>
+            <p>Full-Stack Developer & UI/UX Designer</p>
+            <p>All Rights Reserved © 2024</p>
           </div>
-          <div className="team-card">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" />
-            <h3>Jane Smith</h3>
-            <p>Lead Developer</p>
-          </div>
-          <div className="team-card">
-            <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="Mark Johnson" />
-            <h3>Mark Johnson</h3>
-            <p>UI/UX Designer</p>
-          </div>
+        </div>
+      </section>
+
+      {/* Copyright Section */}
+      <section className="cta-section">
+        <h2>System Rights & Ownership</h2>
+        <p>
+          This entire Olive Foods delivery system has been designed, developed, and implemented by Janitha Madushan. 
+          All code, design elements, functionality, and intellectual property rights are exclusively owned by Janitha Madushan.
+        </p>
+        <div className="copyright-notice">
+          <p><strong>© 2024 Janitha Madushan. All Rights Reserved.</strong></p>
+          <p>This system is proprietary software developed with modern web technologies including React, Node.js, and MongoDB.</p>
         </div>
       </section>
     </div>

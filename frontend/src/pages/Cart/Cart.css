@@ -1,5 +1,16 @@
 .cart{
     margin-top: 100px;
+    background-color: #F3FFE5;
+    min-height: 100vh;
+    padding: 50px 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.cart .cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 .cart-items-title{
     display: grid;
@@ -46,10 +57,10 @@
 .cart-total button{
     border: none;
     color: white;
-    background-color: tomato;
+    background-color: #4E8C01;
     width: max(15vw,200px);
     padding: 12px 0px;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
 }
 .cart-promocode{
@@ -78,7 +89,7 @@
     background-color: black;
     border: none;
     color: white;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 @media (max-width:750px) {
     .cart-bottom{

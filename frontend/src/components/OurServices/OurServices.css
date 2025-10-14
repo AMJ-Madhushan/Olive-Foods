@@ -1,0 +1,252 @@
+/* Our Services Section Styles */
+.our-services-section {
+  font-family: 'Manrope';
+  color: #161A16;
+  line-height: 1.6;
+  padding: 60px 0;
+  background-color: white;
+}
+
+.our-services-section h2 {
+  font-size: max(2vw, 24px);
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* Stats Section */
+.stats-section {
+  background: #F3FFE5;
+  padding: 80px 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.stats-section .our-services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 30px 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(78, 140, 1, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  color: #4E8C01;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.stat-card p {
+  color: #161A16;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Services Section */
+.services-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.services-section .our-services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.services-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #161A16;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: #4E8C01;
+  box-shadow: 0 20px 40px rgba(78, 140, 1, 0.1);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #161A16;
+  font-weight: 600;
+}
+
+.service-card p {
+  color: #161A16;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.service-features li {
+  padding: 8px 0;
+  color: #161A16;
+  position: relative;
+  padding-left: 25px;
+}
+
+.service-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4E8C01;
+  font-weight: bold;
+}
+
+/* How It Works Section */
+.how-it-works-section {
+  background: #F3FFE5;
+  padding: 80px 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.how-it-works-section .our-services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.how-it-works-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #161A16;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4E8C01, #3d6b01);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 20px;
+}
+
+.step-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #161A16;
+  font-weight: 600;
+}
+
+.step-card p {
+  color: #161A16;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-section h2,
+  .how-it-works-section h2 {
+    font-size: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-card,
+  .step-card {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .our-services-section {
+    padding: 40px 0;
+  }
+
+  .services-section,
+  .how-it-works-section {
+    padding: 60px 20px;
+  }
+}
