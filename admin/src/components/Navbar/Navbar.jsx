@@ -19,12 +19,14 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <img className="logo" src={assets.logo} alt="" />
-      {token && admin ? (
-        <p className="login-conditon" onClick={logout}>Logout</p>
-      ) : (
-        <p className="login-conditon" onClick={()=>navigate("/")}>Login</p>
-      )}
-      <img className="profile" src={assets.profile_image} alt="" />
+      <div className="navbar-right">
+        {token && admin ? (
+          <p className="login-conditon" onClick={logout}>Logout</p>
+        ) : (
+          <p className="login-conditon" onClick={()=>navigate("/")}>Login</p>
+        )}
+        <img className="profile" src={assets.profile_image} alt="" />
+      </div>
     </div>
   );
 };
