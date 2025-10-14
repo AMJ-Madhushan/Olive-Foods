@@ -11,6 +11,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Verify from "./pages/Verify/Verify";
 import MyOrders from "./pages/MyOrders/MyOrders";
 import AboutUs from "./pages/AboutUs/AboutUs";
+import Menu from "./pages/Menu/Menu";
+import Contact from "./pages/Contact/Contact";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -22,6 +24,8 @@ const App = () => {
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/order" element={<PlaceOrder />} />
           <Route path="/verify" element={<Verify />} />
