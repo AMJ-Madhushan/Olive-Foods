@@ -19,6 +19,26 @@ a{
 .app{
   width: 80%;
   margin: auto;
+  padding-top: 80px; /* Add padding to account for fixed navbar */
+}
+
+/* Responsive padding adjustments for fixed navbar */
+@media (max-width: 1050px) {
+  .app {
+    padding-top: 90px;
+  }
+}
+
+@media (max-width: 900px) {
+  .app {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 750px) {
+  .app {
+    padding-top: 70px;
+  }
 }
 
 @keyframes fadeIn{
