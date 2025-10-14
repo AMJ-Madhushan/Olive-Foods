@@ -49,28 +49,28 @@ const Navbar = ({ setShowLogin }) => {
           onClick={() => setMenu("home")}
           className={menu === "home" ? "active" : ""}
         >
-          home
+          Home
         </Link>
         <Link
           to="/menu"
           onClick={() => setMenu("menu")}
           className={menu === "menu" ? "active" : ""}
         >
-          menu
+          Menu
         </Link>
         <Link
           to="/contact"
           onClick={() => setMenu("contact-us")}
           className={menu === "contact-us" ? "active" : ""}
         >
-          contact us
+          Contact Us
         </Link>
         <Link
           to="/about-us"
           onClick={() => setMenu("about-us")}
           className={menu === "about-us" ? "active" : ""}
         >
-          about us
+          About Us
         </Link>
       </ul>
       <div className="navbar-right">
@@ -82,7 +82,7 @@ const Navbar = ({ setShowLogin }) => {
           <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
         </div>
         {!token ? (
-          <button onClick={() => setShowLogin(true)}>sign in</button>
+          <button onClick={() => setShowLogin(true)}>Sign In</button>
         ) : (
           <div className="navbar-profile">
             <img src={assets.profile_icon} alt="" />

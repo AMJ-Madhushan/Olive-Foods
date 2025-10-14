@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    z-index: 1000;
+    z-index: 100;
 }
 .navbar .logo{
     width: 150px;
@@ -65,9 +65,10 @@
 
 .navbar button{
     background: transparent;
-    font-size: 16px;
-    color: #161A16;
-    border: 1px solid #4E8C01;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #4E8C01;
+    border: 2px solid #4E8C01;
     padding: 10px 30px;
     border-radius: 8px;
     cursor: pointer;
@@ -77,6 +78,8 @@
 .navbar button:hover{
     background-color: #F3FFE5;
     color: #4E8C01;
+    transform: translateY(-2px);
+    
 }
 
 .navbar .active{
@@ -154,7 +157,7 @@
     position: absolute;
     display: none;
     right: 0;
-    z-index: 2000;
+    z-index: 1000;
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s ease;
