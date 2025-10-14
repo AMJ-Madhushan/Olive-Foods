@@ -1,25 +1,170 @@
+.list{
+    width: 70%;
+    margin-left: max(5vw,25px);
+    margin-top: 50px;
+    color: #161A16;
+    font-size: 16px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.list > p{
+    color: #4E8C01;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.list-table{
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+}
+
 .list-table-format{
     display: grid;
     grid-template-columns: 0.5fr 2fr 1fr 1fr 0.5fr;
     align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
-    border: 1px solid #cacaca;
-    font-size: 13px;
+    gap: 20px;
+    padding: 20px 25px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
 }
+
+.list-table-format:not(.title):hover{
+    background-color: #F3FFE5;
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(78, 140, 1, 0.1);
+}
+
 .list-table-format.title{
-    background-color: #f9f9f9;
+    background: linear-gradient(135deg, #4E8C01, #3d6b01);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: none;
 }
+
+.list-table-format.title b{
+    color: white;
+    font-weight: 700;
+}
+
 .list-table-format img{
-    width: 50px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.list-table-format:hover img{
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.list-table-format p{
+    color: #161A16;
+    font-weight: 500;
+    margin: 0;
+}
+
+.list-table-format p:last-child{
+    color: #dc3545;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: rgba(220, 53, 69, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 40px;
+}
+
+.list-table-format p:last-child:hover{
+    background: #dc3545;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.list-table-format:last-child{
+    border-bottom: none;
+}
+
+/* Category badges */
+.list-table-format p:nth-child(3){
+    background: #F3FFE5;
+    color: #4E8C01;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+/* Price styling */
+.list-table-format p:nth-child(4){
+    color: #4E8C01;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+@media (max-width:768px) {
+    .list{
+        width: 90%;
+        margin-left: 5%;
+    }
+    
+    .list-table-format{
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    
+    .list-table-format.title{
+        display: none;
+    }
+    
+    .list-table-format::before{
+        content: attr(data-label);
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 0.8rem;
+        color: #4E8C01;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    
+    .list-table-format img{
+        width: 50px;
+        height: 50px;
+    }
 }
 
 @media (max-width:600px) {
     .list-table-format{
-        grid-template-columns: 1fr 3fr 1fr;
-        gap: 15px;
+        grid-template-columns: 1fr 2fr;
+        gap: 10px;
+        padding: 12px 15px;
     }
-    .list-table-format.title{
-        display: none;
+    
+    .list-table-format img{
+        width: 40px;
+        height: 40px;
+    }
+    
+    .list-table-format p{
+        font-size: 0.9rem;
     }
 }

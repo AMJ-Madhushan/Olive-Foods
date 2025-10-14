@@ -1,15 +1,138 @@
 .navbar{
+    padding: 20px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 4%;
+    position: relative;
+    z-index: 100;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
 }
+
 .navbar .logo{
-    width: max(10%,80px);
+    width: 150px;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
+
+.navbar .logo:hover{
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
 .navbar .profile{
-    width: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4E8C01;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
+
+.navbar .profile:hover{
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(78, 140, 1, 0.3);
+}
+
 .login-conditon{
-    font-size: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4E8C01;
+    padding: 10px 20px;
+    border: 2px solid #4E8C01;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-conditon::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(78, 140, 1, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.login-conditon:hover{
+    background-color: #F3FFE5;
+    color: #4E8C01;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(78, 140, 1, 0.15);
+}
+
+.login-conditon:hover::before{
+    left: 100%;
+}
+
+.navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width:1050px) {
+    .navbar .logo{
+        width: 140px;
+    }
+    .navbar .profile{
+        width: 45px;
+        height: 45px;
+    }
+    .login-conditon{
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:900px) {
+    .navbar .logo{
+        width: 120px;
+    }
+    .navbar .profile{
+        width: 40px;
+        height: 40px;
+    }
+    .login-conditon{
+        padding: 7px 14px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width:750px) { 
+    .navbar{
+        padding: 15px 0px;
+    }
+    .navbar .logo{
+        width: 100px;
+    }
+    .navbar .profile{
+        width: 35px;
+        height: 35px;
+    }
+    .login-conditon{
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width:600px) {
+    .navbar .logo{
+        width: 80px;
+    }
+    .navbar .profile{
+        width: 30px;
+        height: 30px;
+    }
+    .login-conditon{
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
 }
