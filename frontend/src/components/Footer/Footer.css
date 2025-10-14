@@ -1,6 +1,6 @@
 .footer {
   color: white;
-  background: linear-gradient(135deg, #4E8C01, #3d6b01);
+  background: linear-gradient(135deg, #afb9a4, #9bb678);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,6 +45,12 @@
   color: white;
   font-weight: 700;
   margin-bottom: 1rem;
+}
+
+.footer-content-left img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
 }
 
 .footer-social-icons img{
