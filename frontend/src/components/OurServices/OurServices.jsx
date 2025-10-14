@@ -56,7 +56,7 @@ export default function OurServices() {
 
   return (
     <div className="our-services-section">
-      <h2>Our Services</h2>
+      {/* <h2>Our Services</h2> */}
       {/* Stats Section */}
       <section className="stats-section">
         <div className="stats-grid">
