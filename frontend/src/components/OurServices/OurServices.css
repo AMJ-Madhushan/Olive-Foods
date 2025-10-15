@@ -15,7 +15,7 @@
 
 /* Stats Section */
 .stats-section {
-  background: #F3FFE5;
+  background: #ffffff;
   padding: 80px 0;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
@@ -64,7 +64,9 @@
 /* Services Section */
 .services-section {
   padding: 80px 0;
-  background: white;
+  background: #F3FFE5;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 .services-section .our-services-container {
@@ -145,7 +147,7 @@
 
 /* How It Works Section */
 .how-it-works-section {
-  background: #F3FFE5;
+  background: #ffffff;
   padding: 80px 0;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
@@ -173,7 +175,7 @@
 }
 
 .step-card {
-  background: white;
+  background: #F3FFE5;
   padding: 40px 30px;
   border-radius: 20px;
   text-align: center;
