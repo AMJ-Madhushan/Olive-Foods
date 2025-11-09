@@ -13,6 +13,8 @@ import MyOrders from "./pages/MyOrders/MyOrders";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Menu from "./pages/Menu/Menu";
 import Contact from "./pages/Contact/Contact";
+import HealthProfile from "./pages/HealthProfile/HealthProfile";
+import Recommendations from "./pages/Recommendations/Recommendations";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -31,6 +33,8 @@ const App = () => {
           <Route path="/verify" element={<Verify />} />
           <Route path="/myorders" element={<MyOrders />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/health-profile" element={<HealthProfile />} />
+          <Route path="/recommendations" element={<Recommendations />} />
         </Routes>
       </div>
       <Footer />
