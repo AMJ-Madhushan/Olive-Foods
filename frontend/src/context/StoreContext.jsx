@@ -9,6 +9,8 @@ const StoreContextProvider = (props) => {
   const url = "http://localhost:4000";
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
+  const [hasHealthProfile, setHasHealthProfile] = useState(false);
+  const [healthProfileRefreshTrigger, setHealthProfileRefreshTrigger] = useState(0);
 
   const addToCart = async (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: (prev[itemId] || 0) + 1 }));
@@ -94,6 +96,33 @@ const StoreContextProvider = (props) => {
     }
   };
 
+  const checkHealthProfileStatus = async () => {
+    if (!token) {
+      setHasHealthProfile(false);
+      return;
+    }
+    
+    try {
+      const response = await axios.post(
+        `${url}/api/ml/health-profile/get`,
+        {},
+        { headers: { token } }
+      );
+      if (response.data.success && response.data.hasCompletedHealthProfile) {
+        setHasHealthProfile(true);
+      } else {
+        setHasHealthProfile(false);
+      }
+    } catch (error) {
+      console.error('Error checking health profile:', error);
+      setHasHealthProfile(false);
+    }
+  };
+
+  const refreshHealthProfileStatus = () => {
+    setHealthProfileRefreshTrigger(prev => prev + 1);
+  };
+
   useEffect(() => {
     async function loadData() {
       await fetchFoodList();
@@ -106,6 +135,14 @@ const StoreContextProvider = (props) => {
     loadData();
   }, []);
 
+  useEffect(() => {
+    if (token) {
+      checkHealthProfileStatus();
+    } else {
+      setHasHealthProfile(false);
+    }
+  }, [token, healthProfileRefreshTrigger]);
+
   const contextValue = {
     food_list,
     cartItems,
@@ -116,6 +153,8 @@ const StoreContextProvider = (props) => {
     url,
     token,
     setToken,
+    hasHealthProfile,
+    refreshHealthProfileStatus,
   };
 
   return (
