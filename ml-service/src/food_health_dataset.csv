@@ -1,0 +1,133 @@
+food_id,food_name,category,calories,protein,carbohydrates,diabetes_score,hypertension_score,heart_disease_score,cholesterol_score,obesity_score,kidney_score
+1,Grilled Chicken Salad,Salads & Greens,252,29,24,6,10,7,7,6,5
+2,Caesar Salad,Salads & Greens,224,20,13,10,8,4,8,7,9
+3,Greek Salad,Salads & Greens,307,15,11,7,7,4,7,7,7
+4,Kale Salad,Salads & Greens,171,21,26,6,9,6,8,10,7
+5,Spinach Salad,Salads & Greens,339,24,28,7,6,7,10,4,8
+6,Garden Salad,Salads & Greens,200,16,18,10,8,7,7,7,7
+7,Tuna Salad,Salads & Greens,158,30,11,10,10,9,10,8,6
+8,Cobb Salad,Salads & Greens,184,23,26,7,8,7,10,9,7
+9,Asian Chicken Salad,Salads & Greens,283,31,19,9,7,9,8,5,5
+10,Quinoa Salad,Salads & Greens,339,13,23,6,7,6,10,5,8
+11,Caprese Salad,Salads & Greens,339,17,25,4,6,6,7,7,7
+12,Nicoise Salad,Salads & Greens,337,22,18,4,6,4,7,4,8
+13,Waldorf Salad,Salads & Greens,158,33,10,10,9,9,7,10,6
+14,Arugula Salad,Salads & Greens,182,14,19,10,8,4,10,6,6
+15,Mediterranean Salad,Salads & Greens,221,21,11,8,10,6,9,9,9
+16,Zucchini Noodles with Pesto,Low-Carb Meals,236,22,16,9,9,6,3,10,6
+17,Cauliflower Rice Bowl,Low-Carb Meals,374,33,7,4,4,8,5,8,5
+18,Egg White Scramble,Low-Carb Meals,302,28,19,6,5,8,6,6,6
+19,Lettuce Wrap Tacos,Low-Carb Meals,262,26,21,7,7,10,6,7,4
+20,Grilled Steak with Asparagus,Low-Carb Meals,350,26,17,6,6,7,6,6,6
+21,Shirataki Noodle Stir Fry,Low-Carb Meals,386,38,6,5,4,8,3,6,5
+22,Cabbage Rolls,Low-Carb Meals,227,31,16,9,8,9,6,10,6
+23,Stuffed Bell Peppers,Low-Carb Meals,291,26,5,8,7,9,4,6,4
+24,Cloud Bread Sandwich,Low-Carb Meals,202,26,10,10,7,8,3,10,6
+25,Eggplant Lasagna,Low-Carb Meals,371,34,13,7,4,8,3,7,5
+26,Spaghetti Squash,Low-Carb Meals,238,21,7,8,7,4,6,10,8
+27,Keto Pizza,Low-Carb Meals,312,21,6,7,5,6,3,9,6
+28,Cheese Crisps,Low-Carb Meals,328,38,6,4,7,8,6,7,6
+29,Grilled Chicken Breast,High-Protein,267,40,33,6,7,9,4,7,4
+30,Protein Smoothie Bowl,High-Protein,315,31,15,5,6,9,6,7,4
+31,Egg White Omelette,High-Protein,400,35,25,4,6,7,6,6,6
+32,Turkey Breast,High-Protein,289,32,28,7,10,9,6,4,4
+33,Tuna Steak,High-Protein,367,36,27,7,4,9,6,4,4
+34,Cottage Cheese Bowl,High-Protein,377,39,12,6,7,10,4,7,4
+35,Greek Yogurt Parfait,High-Protein,443,46,11,4,7,5,6,4,1
+36,Chicken Burrito Bowl,High-Protein,359,38,18,6,6,10,6,6,5
+37,Beef Stir Fry,High-Protein,319,30,33,7,6,7,6,7,5
+38,Salmon Fillet,High-Protein,303,49,39,6,7,8,3,6,1
+39,Shrimp Skewers,High-Protein,292,47,23,5,8,8,5,7,1
+40,Protein Pancakes,High-Protein,368,33,10,7,4,8,3,7,6
+41,Chicken Wrap,High-Protein,394,46,10,7,7,9,5,5,3
+42,Baked Salmon with Vegetables,Heart-Healthy,221,28,25,5,7,10,4,10,6
+43,Oatmeal with Berries,Heart-Healthy,220,15,34,7,7,6,6,4,9
+44,Avocado Toast,Heart-Healthy,346,18,22,7,4,9,3,7,9
+45,Chia Seed Pudding,Heart-Healthy,357,28,40,5,6,10,3,4,4
+46,Walnut Crusted Fish,Heart-Healthy,245,17,20,7,9,6,3,7,8
+47,Olive Oil Pasta,Heart-Healthy,360,17,37,4,5,8,4,5,8
+48,Almond Butter Toast,Heart-Healthy,303,28,43,5,7,10,4,6,5
+49,Mediterranean Bowl,Heart-Healthy,326,24,21,5,4,9,3,4,8
+50,Flaxseed Muffin,Heart-Healthy,375,21,29,6,5,8,4,4,9
+51,Omega-3 Smoothie,Heart-Healthy,212,21,44,7,4,9,3,9,9
+52,Sardine Salad,Heart-Healthy,341,26,38,6,6,10,4,5,6
+53,Mackerel Grill,Heart-Healthy,390,33,44,5,6,10,3,5,5
+54,Cinnamon Oatmeal,Diabetic-Friendly,207,31,29,7,8,9,4,10,4
+55,Sugar-Free Berry Bowl,Diabetic-Friendly,157,26,21,6,9,10,4,8,5
+56,Veggie Omelette,Diabetic-Friendly,196,17,17,10,8,7,4,5,8
+57,Grilled Fish with Greens,Diabetic-Friendly,294,33,14,10,7,8,5,6,4
+58,Lentil Soup,Diabetic-Friendly,289,15,10,10,8,7,4,5,9
+59,Chickpea Curry,Diabetic-Friendly,238,22,22,6,7,7,3,10,9
+60,Roasted Vegetables,Diabetic-Friendly,340,19,12,9,5,7,5,4,7
+61,Baked Tofu,Diabetic-Friendly,334,28,14,8,4,8,4,5,4
+62,Steamed Broccoli with Chicken,Diabetic-Friendly,293,30,16,10,8,8,3,6,5
+63,Cauliflower Mash,Diabetic-Friendly,159,19,13,10,10,6,4,5,8
+64,Green Bean Casserole,Diabetic-Friendly,335,15,14,6,7,7,6,7,8
+65,Mushroom Soup,Diabetic-Friendly,151,31,29,9,10,8,5,8,4
+66,Brown Rice Bowl,Whole Grains,438,10,50,4,7,6,7,4,5
+67,Quinoa Pilaf,Whole Grains,292,19,52,3,5,5,7,6,7
+68,Whole Wheat Pasta,Whole Grains,284,14,56,2,7,4,8,5,7
+69,Barley Soup,Whole Grains,411,10,48,6,7,5,7,5,4
+70,Oatmeal Bowl,Whole Grains,324,15,43,4,4,4,7,7,7
+71,Bulgur Salad,Whole Grains,350,16,63,3,4,6,10,7,7
+72,Farro Bowl,Whole Grains,345,15,62,2,7,4,10,4,8
+73,Wild Rice Mix,Whole Grains,262,14,64,3,4,5,7,4,7
+74,Whole Grain Bread,Whole Grains,333,16,61,1,6,6,7,7,9
+75,Buckwheat Pancakes,Whole Grains,438,16,58,1,6,7,8,6,6
+76,Millet Porridge,Whole Grains,360,12,44,6,7,4,10,6,6
+77,Amaranth Bowl,Whole Grains,302,14,55,1,6,4,7,5,7
+78,Whole Wheat Pizza,Whole Grains,416,17,44,6,6,4,9,6,5
+79,Baked Chicken Breast,Lean Protein,225,33,9,9,10,9,6,9,6
+80,Grilled Turkey,Lean Protein,290,32,9,8,8,10,7,5,4
+81,Cod Fillet,Lean Protein,178,29,5,10,10,10,3,8,5
+82,Tilapia Baked,Lean Protein,294,31,8,8,10,10,7,7,6
+83,Shrimp Cocktail,Lean Protein,168,36,5,10,9,10,7,10,6
+84,Egg Whites,Lean Protein,275,27,12,8,8,10,4,5,4
+85,Turkey Meatballs,Lean Protein,276,33,6,8,9,9,7,4,6
+86,Chicken Skewers,Lean Protein,262,25,5,8,8,7,6,4,4
+87,Fish Tacos,Lean Protein,210,39,4,9,7,10,6,10,6
+88,Lean Beef Patty,Lean Protein,169,42,14,8,7,10,8,10,1
+89,Venison Steak,Lean Protein,266,27,6,8,9,10,4,7,5
+90,Rabbit Stew,Lean Protein,266,32,9,9,10,10,7,7,4
+91,Bison Burger,Lean Protein,190,28,10,9,9,9,3,8,4
+92,Veggie Burger,Vegetarian,411,22,57,1,4,5,9,4,5
+93,Tofu Stir Fry,Vegetarian,281,12,34,6,7,5,8,7,7
+94,Lentil Dal,Vegetarian,441,20,42,4,6,7,7,5,4
+95,Chickpea Curry,Vegetarian,345,24,46,6,4,5,9,4,7
+96,Black Bean Burrito,Vegetarian,258,20,46,4,4,5,7,6,8
+97,Falafel Wrap,Vegetarian,328,14,45,6,5,7,7,4,8
+98,Vegetable Curry,Vegetarian,332,15,32,4,6,4,7,4,7
+99,Paneer Tikka,Vegetarian,401,12,46,4,5,4,8,4,6
+100,Tempeh Bowl,Vegetarian,372,22,33,5,4,4,10,7,7
+101,Seitan Stir Fry,Vegetarian,291,24,37,6,8,5,8,5,7
+102,Edamame Bowl,Vegetarian,202,20,47,7,4,5,10,4,7
+103,Bean Chili,Vegetarian,421,20,54,1,7,6,9,6,6
+104,Veggie Pizza,Vegetarian,428,14,43,5,6,6,9,5,5
+105,Vegetable Soup,Soups,137,6,16,9,8,6,5,6,8
+106,Chicken Broth,Soups,151,13,20,4,10,6,6,5,8
+107,Tomato Soup,Soups,205,7,31,4,7,7,4,7,6
+108,Lentil Soup,Soups,173,5,34,7,7,5,4,4,7
+109,Minestrone,Soups,225,15,25,7,9,6,5,4,8
+110,Miso Soup,Soups,282,19,25,5,10,7,6,7,9
+111,Butternut Squash Soup,Soups,283,13,17,10,9,4,6,5,6
+112,French Onion Soup,Soups,221,7,33,4,7,5,6,5,6
+113,Split Pea Soup,Soups,121,9,20,4,7,4,6,5,7
+114,Mushroom Soup,Soups,133,5,28,5,7,6,3,5,6
+115,Gazpacho,Soups,146,13,36,6,10,5,5,6,9
+116,Pho,Soups,160,5,18,8,10,4,5,4,9
+117,Ramen,Soups,146,19,38,5,8,5,6,6,7
+118,Grilled Salmon,Grilled Items,465,26,22,5,5,6,6,6,6
+119,BBQ Chicken,Grilled Items,252,39,32,5,9,9,6,5,5
+120,Grilled Vegetables,Grilled Items,287,27,28,6,10,7,5,4,5
+121,Kebabs,Grilled Items,288,41,16,9,8,8,6,4,1
+122,Grilled Shrimp,Grilled Items,461,28,19,6,4,4,4,6,6
+123,Steak,Grilled Items,463,26,24,7,7,4,6,6,5
+124,Pork Chops,Grilled Items,418,29,15,7,5,7,4,6,6
+125,Lamb Chops,Grilled Items,358,30,14,4,4,7,4,4,5
+126,Grilled Portobello,Grilled Items,319,40,13,5,6,8,7,5,6
+127,Grilled Halloumi,Grilled Items,401,33,32,6,6,6,6,7,6
+128,Grilled Corn,Grilled Items,255,26,29,7,9,10,5,5,5
+129,Mixed Grill,Grilled Items,362,30,28,5,4,8,5,6,5
+130,Tandoori Chicken,Grilled Items,428,37,21,4,5,5,7,7,6
+131,Grilled Eggplant,Grilled Items,461,25,29,4,7,6,3,5,5
+132,BBQ Tofu,Grilled Items,313,30,14,5,6,9,6,4,6

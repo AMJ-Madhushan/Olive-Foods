@@ -85,7 +85,35 @@
     background-color: #F3FFE5;
     color: #4E8C01;
     transform: translateY(-2px);
-    
+}
+
+.suggest-me-btn {
+    background: linear-gradient(135deg, #4E8C01, #3d6b01) !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 24px !important;
+    border-radius: 10px;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(78, 140, 1, 0.3);
+    transition: all 0.3s ease;
+    animation: pulse-btn 2s infinite;
+}
+
+@keyframes pulse-btn {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(78, 140, 1, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(78, 140, 1, 0.5);
+    }
+}
+
+.suggest-me-btn:hover {
+    background: linear-gradient(135deg, #3d6b01, #2d5201) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(78, 140, 1, 0.4) !important;
 }
 
 .navbar .active{

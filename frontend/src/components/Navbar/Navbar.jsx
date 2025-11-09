@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
-  const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+  const { getTotalCartAmount, token, setToken, url, hasHealthProfile } = useContext(StoreContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -30,6 +30,7 @@ const Navbar = ({ setShowLogin }) => {
         break;
     }
   }, [location.pathname]);
+
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -74,18 +75,30 @@ const Navbar = ({ setShowLogin }) => {
         </Link>
       </ul>
       <div className="navbar-right">
-         <div className="navbar-search-icon">
+        {token && hasHealthProfile && (
+          <button onClick={() => navigate("/recommendations")} className="suggest-me-btn">
+            🎯 Suggest Me
+          </button>
+        )}
+        
+        <div className="navbar-search-icon">
           <Link to="/cart">
             <img src={assets.basket_icon} alt="" style={{ width: "30px", height: "30px", objectFit: "contain" }} />
           </Link>
           <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
         </div>
+        
         {!token ? (
           <button onClick={() => setShowLogin(true)}>Sign In</button>
         ) : (
           <div className="navbar-profile">
             <img src={assets.profile_icon} alt="" style={{ width: "30px", height: "30px", objectFit: "contain" }}/>
             <ul className="nav-profile-dropdown">
+              <li onClick={() => navigate("/health-profile")}>
+                <img src={assets.profile_icon} alt="" />
+                <p>Update Medical Condition</p>
+              </li>
+              <hr />
               <li onClick={() => navigate("/myorders")}>
                 <img src={assets.bag_icon} alt="" />
                 <p>Orders</p>
