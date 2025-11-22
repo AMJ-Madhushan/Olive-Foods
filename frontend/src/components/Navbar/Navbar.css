@@ -11,6 +11,12 @@
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    transition: top 0.3s ease;
+}
+
+/* Adjust navbar position when banner is visible */
+body.banner-visible .navbar {
+    top: var(--banner-height, 60px); /* Dynamic banner height */
 }
 .navbar .logo{
     width: 150px;
@@ -255,6 +261,9 @@
     .navbar {
         padding: 12px 30px;
     }
+    body.banner-visible .navbar {
+        top: var(--banner-height, 60px);
+    }
     .navbar .logo{
         width: 140px;
     } 
@@ -278,6 +287,9 @@
 @media (max-width:900px) {
     .navbar {
         padding: 12px 20px;
+    }
+    body.banner-visible .navbar {
+        top: var(--banner-height, 60px);
     }
     .navbar .logo{
         width: 120px;
@@ -304,6 +316,9 @@
 @media (max-width:750px) { 
     .navbar {
         padding: 12px 15px;
+    }
+    body.banner-visible .navbar {
+        top: var(--banner-height, 60px);
     }
     .navbar-menu{
         display: none;
