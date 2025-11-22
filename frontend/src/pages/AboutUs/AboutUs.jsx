@@ -1,14 +1,15 @@
 import React from "react";
 import "./AboutUs.css";
+import PageHero from "../../components/PageHero/PageHero";
 
 export default function AboutUs() {
   return (
     <div className="about-us-container">
       {/* Hero Section */}
-      <section className="hero-section">
-        <h1>About Olive Foods</h1>
-        <p>Your premier destination for delicious, fresh food delivered right to your doorstep. Experience the convenience of modern Olive Foods delivery with quality you can trust.</p>
-      </section>
+      <PageHero 
+        header="About Olive Foods"
+        title="Your premier destination for delicious, fresh food delivered right to your doorstep. Experience the convenience of modern Olive Foods delivery with quality you can trust."
+      />
 
       {/* Application Mission */}
       <section className="mission-section">
