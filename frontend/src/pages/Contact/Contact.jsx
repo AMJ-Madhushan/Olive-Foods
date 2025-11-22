@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import './Contact.css'
+import PageHero from '../../components/PageHero/PageHero'
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -74,11 +75,11 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
+      <PageHero 
+        header="Contact Us"
+        title="We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+      />
       <div className="contact-container">
-        <div className="contact-header">
-          <h1>Contact Us</h1>
-          <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-        </div>
 
         <div className="contact-content">
           <div className="contact-info">
