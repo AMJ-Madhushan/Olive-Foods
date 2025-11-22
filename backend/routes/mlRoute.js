@@ -5,7 +5,8 @@ import {
   updateHealthProfile,
   getHealthProfile,
   calculateBMI,
-  checkMLServiceStatus
+  checkMLServiceStatus,
+  getSavedRecommendations
 } from '../controllers/mlController.js';
 import authMiddleware from '../middleware/auth.js';
 
@@ -13,6 +14,9 @@ const mlRouter = express.Router();
 
 // Get personalized food recommendations
 mlRouter.post('/recommend', authMiddleware, getFoodRecommendations);
+
+// Get saved recommendations for user
+mlRouter.post('/recommendations/get', authMiddleware, getSavedRecommendations);
 
 // Predict food suitability (for admin when adding food)
 mlRouter.post('/predict-suitability', authMiddleware, predictFoodSuitability);

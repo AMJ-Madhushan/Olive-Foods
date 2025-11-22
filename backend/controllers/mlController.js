@@ -1,6 +1,8 @@
 import axios from 'axios';
+import mongoose from 'mongoose';
 import foodModel from '../models/foodModel.js';
 import userModel from '../models/userModel.js';
+import recommendedFoodsModel from '../models/recommendedFoodsModel.js';
 
 // ML Service URL - configure in .env
 const ML_SERVICE_URL = process.env.ML_SERVICE_URL || 'http://localhost:5001';
@@ -72,11 +74,40 @@ const getFoodRecommendations = async (req, res) => {
       { timeout: 10000 }
     );
     
-    res.json({
-      success: true,
+    const recommendationsData = {
       recommendations: mlResponse.data.recommendations,
       activeConditions: mlResponse.data.activeConditions,
-      totalFoods: mlResponse.data.totalFoods,
+      totalFoods: mlResponse.data.totalFoods
+    };
+    
+    // Save or update recommendations in database
+    try {
+      const userIdObjectId = mongoose.Types.ObjectId.isValid(userId) 
+        ? new mongoose.Types.ObjectId(userId) 
+        : userId;
+      
+      await recommendedFoodsModel.findOneAndUpdate(
+        { userId: userIdObjectId },
+        {
+          userId: userIdObjectId,
+          recommendations: recommendationsData.recommendations,
+          activeConditions: recommendationsData.activeConditions,
+          totalFoods: recommendationsData.totalFoods,
+          lastUpdated: new Date()
+        },
+        { upsert: true, new: true }
+      );
+      console.log('✅ Recommendations saved/updated for user:', userId);
+    } catch (saveError) {
+      console.error('⚠️ Error saving recommendations:', saveError.message);
+      // Continue even if save fails - recommendations are still returned
+    }
+    
+    res.json({
+      success: true,
+      recommendations: recommendationsData.recommendations,
+      activeConditions: recommendationsData.activeConditions,
+      totalFoods: recommendationsData.totalFoods,
       message: 'Recommendations generated successfully'
     });
     
@@ -348,12 +379,60 @@ const checkMLServiceStatus = async (req, res) => {
   }
 };
 
+// Get saved recommendations for user
+const getSavedRecommendations = async (req, res) => {
+  try {
+    const userId = req.body.userId;
+    
+    if (!userId) {
+      return res.json({ 
+        success: false, 
+        message: 'User ID is required' 
+      });
+    }
+    
+    const userIdObjectId = mongoose.Types.ObjectId.isValid(userId) 
+      ? new mongoose.Types.ObjectId(userId) 
+      : userId;
+    
+    const savedRecommendations = await recommendedFoodsModel.findOne({ userId: userIdObjectId });
+    
+    if (!savedRecommendations || !savedRecommendations.recommendations || savedRecommendations.recommendations.length === 0) {
+      return res.json({
+        success: true,
+        hasRecommendations: false,
+        message: 'No saved recommendations found'
+      });
+    }
+    
+    console.log('📋 Saved recommendations fetched for user:', userId);
+    console.log('   - Total recommendations:', savedRecommendations.recommendations.length);
+    
+    res.json({
+      success: true,
+      hasRecommendations: true,
+      recommendations: savedRecommendations.recommendations,
+      activeConditions: savedRecommendations.activeConditions || [],
+      totalFoods: savedRecommendations.totalFoods || 0,
+      lastUpdated: savedRecommendations.lastUpdated
+    });
+    
+  } catch (error) {
+    console.error('Error getting saved recommendations:', error);
+    res.json({ 
+      success: false, 
+      message: 'Error getting saved recommendations: ' + error.message 
+    });
+  }
+};
+
 export { 
   getFoodRecommendations, 
   predictFoodSuitability, 
   updateHealthProfile,
   getHealthProfile,
   calculateBMI,
-  checkMLServiceStatus
+  checkMLServiceStatus,
+  getSavedRecommendations
 };
 

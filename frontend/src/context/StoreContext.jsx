@@ -96,8 +96,9 @@ const StoreContextProvider = (props) => {
     }
   };
 
-  const checkHealthProfileStatus = async () => {
-    if (!token) {
+  const checkHealthProfileStatus = async (tokenToCheck = null) => {
+    const tokenToUse = tokenToCheck || token;
+    if (!tokenToUse) {
       setHasHealthProfile(false);
       return;
     }
@@ -106,8 +107,9 @@ const StoreContextProvider = (props) => {
       const response = await axios.post(
         `${url}/api/ml/health-profile/get`,
         {},
-        { headers: { token } }
+        { headers: { token: tokenToUse } }
       );
+      console.log('Health profile check response:', response.data);
       if (response.data.success && response.data.hasCompletedHealthProfile) {
         setHasHealthProfile(true);
       } else {
@@ -137,10 +139,13 @@ const StoreContextProvider = (props) => {
 
   useEffect(() => {
     if (token) {
-      checkHealthProfileStatus();
+      // Check health profile status immediately when token is set or refreshed
+      // Use the token from the dependency to ensure we have the latest value
+      checkHealthProfileStatus(token);
     } else {
       setHasHealthProfile(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token, healthProfileRefreshTrigger]);
 
   const contextValue = {
