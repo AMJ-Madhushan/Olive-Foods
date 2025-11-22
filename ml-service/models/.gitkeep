@@ -1,0 +1,6 @@
+# This directory will contain trained ML models
+# Files:
+# - food_recommendation_model.pkl
+# - feature_scaler.pkl
+# - feature_columns.pkl
+

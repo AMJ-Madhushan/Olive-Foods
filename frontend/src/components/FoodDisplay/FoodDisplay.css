@@ -5,6 +5,12 @@
     margin-left: calc(-50vw + 50%);
 }
 
+.food-display .food-display-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .food-display .food-display-container {
     max-width: 1200px;
     margin: 0 auto;

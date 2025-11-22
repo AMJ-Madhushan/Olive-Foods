@@ -19,6 +19,41 @@ a{
 .app{
   width: 80%;
   margin: auto;
+  padding-top: 80px; /* Add padding to account for fixed navbar */
+  transition: padding-top 0.3s ease;
+}
+
+/* Adjust padding when banner is visible */
+body.banner-visible .app {
+  padding-top: calc(var(--banner-height, 60px) + 80px); /* Dynamic banner height + Navbar */
+}
+
+/* Responsive padding adjustments for fixed navbar */
+@media (max-width: 1050px) {
+  .app {
+    padding-top: 90px;
+  }
+  body.banner-visible .app {
+    padding-top: calc(var(--banner-height, 60px) + 90px);
+  }
+}
+
+@media (max-width: 900px) {
+  .app {
+    padding-top: 80px;
+  }
+  body.banner-visible .app {
+    padding-top: calc(var(--banner-height, 60px) + 80px);
+  }
+}
+
+@media (max-width: 750px) {
+  .app {
+    padding-top: 70px;
+  }
+  body.banner-visible .app {
+    padding-top: calc(var(--banner-height, 60px) + 70px);
+  }
 }
 
 @keyframes fadeIn{

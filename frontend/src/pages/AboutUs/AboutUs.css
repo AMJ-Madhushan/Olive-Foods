@@ -6,24 +6,7 @@
   background-color: white;
 }
 
-/* Hero Section */
-.hero-section {
-  background: linear-gradient(90deg, #4E8C01, #3d6b01);
-  color: white;
-  text-align: center;
-  padding: 100px 20px 60px;
-}
-
-.hero-section h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.hero-section p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
+/* Hero Section - Now handled by PageHero component */
 
 /* Mission Section */
 .mission-section {

@@ -9,6 +9,8 @@ const StoreContextProvider = (props) => {
   const url = "http://localhost:4000";
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
+  const [hasHealthProfile, setHasHealthProfile] = useState(false);
+  const [healthProfileRefreshTrigger, setHealthProfileRefreshTrigger] = useState(0);
 
   const addToCart = async (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: (prev[itemId] || 0) + 1 }));
@@ -94,6 +96,35 @@ const StoreContextProvider = (props) => {
     }
   };
 
+  const checkHealthProfileStatus = async (tokenToCheck = null) => {
+    const tokenToUse = tokenToCheck || token;
+    if (!tokenToUse) {
+      setHasHealthProfile(false);
+      return;
+    }
+    
+    try {
+      const response = await axios.post(
+        `${url}/api/ml/health-profile/get`,
+        {},
+        { headers: { token: tokenToUse } }
+      );
+      console.log('Health profile check response:', response.data);
+      if (response.data.success && response.data.hasCompletedHealthProfile) {
+        setHasHealthProfile(true);
+      } else {
+        setHasHealthProfile(false);
+      }
+    } catch (error) {
+      console.error('Error checking health profile:', error);
+      setHasHealthProfile(false);
+    }
+  };
+
+  const refreshHealthProfileStatus = () => {
+    setHealthProfileRefreshTrigger(prev => prev + 1);
+  };
+
   useEffect(() => {
     async function loadData() {
       await fetchFoodList();
@@ -106,6 +137,17 @@ const StoreContextProvider = (props) => {
     loadData();
   }, []);
 
+  useEffect(() => {
+    if (token) {
+      // Check health profile status immediately when token is set or refreshed
+      // Use the token from the dependency to ensure we have the latest value
+      checkHealthProfileStatus(token);
+    } else {
+      setHasHealthProfile(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token, healthProfileRefreshTrigger]);
+
   const contextValue = {
     food_list,
     cartItems,
@@ -116,6 +158,8 @@ const StoreContextProvider = (props) => {
     url,
     token,
     setToken,
+    hasHealthProfile,
+    refreshHealthProfileStatus,
   };
 
   return (

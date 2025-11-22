@@ -49,7 +49,7 @@ const Orders = ({ url }) => {
 
   return (
     <div className="order add">
-      <h3>Order Page</h3>
+      <h3>Manage Orders</h3>
       <div className="order-list">
         {orders.map((order, index) => (
           <div key={index} className="order-item">

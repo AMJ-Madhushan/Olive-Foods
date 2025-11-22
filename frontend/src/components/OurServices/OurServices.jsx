@@ -24,27 +24,7 @@ export default function OurServices() {
       icon: "📞",
       features: ["24/7 availability", "Multi-language support", "Quick resolution"]
     },
-    {
-      id: 4,
-      title: "AI-Driven Olive Foods Prediction",
-      description: "Get personalized food recommendations based on your medical conditions and health status. Our AI analyzes your health profile to suggest the most suitable meals for your well-being.",
-      icon: "🤖",
-      features: ["Health-based recommendations", "Medical condition analysis", "Personalized meal plans"]
-    },
-    {
-      id: 5,
-      title: "Loyalty Program",
-      description: "Earn points with every order and redeem them for discounts, free delivery, and exclusive offers.",
-      icon: "⭐",
-      features: ["Points system", "Exclusive offers", "Free delivery rewards"]
-    },
-    {
-      id: 6,
-      title: "Group Orders",
-      description: "Perfect for offices and events. Place large orders with multiple items from different restaurants.",
-      icon: "👥",
-      features: ["Bulk ordering", "Split payments", "Event catering"]
-    }
+
   ];
 
   const stats = [
@@ -56,7 +36,7 @@ export default function OurServices() {
 
   return (
     <div className="our-services-section">
-      <h2>Our Services</h2>
+      {/* <h2>Our Services</h2> */}
       {/* Stats Section */}
       <section className="stats-section">
         <div className="stats-grid">

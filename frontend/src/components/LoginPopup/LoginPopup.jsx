@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import PropTypes from "prop-types";
 
 const LoginPopup = ({ setShowLogin }) => {
-  const { url, setToken } = useContext(StoreContext);
+  const { url, setToken, refreshHealthProfileStatus } = useContext(StoreContext);
   const [currentState, setCurrentState] = useState("Login");
   const [data, setData] = useState({
     name: "",
@@ -29,9 +29,15 @@ const LoginPopup = ({ setShowLogin }) => {
     try {
       const response = await axios.post(newUrl, data);
       if (response.data.success) {
-        setToken(response.data.token);
-        localStorage.setItem("token", response.data.token);
+        const newToken = response.data.token;
+        setToken(newToken);
+        localStorage.setItem("token", newToken);
         toast.success(`${currentState} Successfully`);
+        // Trigger health profile status check immediately after login
+        // The useEffect in StoreContext will also trigger, but this ensures it happens
+        setTimeout(() => {
+          refreshHealthProfileStatus();
+        }, 100);
         setShowLogin(false);
       } else {
         toast.error(response.data.message || "Something went wrong");

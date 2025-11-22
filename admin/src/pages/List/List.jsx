@@ -43,12 +43,15 @@ const List = ({ url }) => {
 
   return (
     <div className="list add flex-col">
-      <p>All Food List</p>
+      <p>All Food Items</p>
       <div className="list-table">
         <div className="list-table-format title">
           <b>Image</b>
           <b>Name</b>
           <b>Category</b>
+          <b>Calories</b>
+          <b>Protein (g)</b>
+          <b>Carbs (g)</b>
           <b>Price</b>
           <b>Action</b>
         </div>
@@ -57,11 +60,27 @@ const List = ({ url }) => {
             <div key={index} className="list-table-format">
               <img src={`${url}/images/` + item.image} alt="" />
               <p>{item.name}</p>
-              <p>{item.category}</p>
-              <p>${item.price}</p>
-              <p onClick={() => removeFood(item._id)} className="cursor">
-                X
-              </p>
+              <p className="category-badge">{item.category}</p>
+              <p className="nutritional-badge calories">{item.nutritionalInfo?.calories || 'N/A'}</p>
+              <p className="nutritional-badge protein">{item.nutritionalInfo?.protein || 'N/A'}g</p>
+              <p className="nutritional-badge carbs">{item.nutritionalInfo?.carbohydrates || 'N/A'}g</p>
+              <p className="price-tag">${item.price}</p>
+              <div className="action-buttons">
+                <span 
+                  onClick={() => navigate(`/add?id=${item._id}`)} 
+                  className="edit-icon cursor"
+                  title="Edit Food Item"
+                >
+                  ✏️
+                </span>
+                <span 
+                  onClick={() => removeFood(item._id)} 
+                  className="delete-icon cursor"
+                  title="Delete Food Item"
+                >
+                  X
+                </span>
+              </div>
             </div>
           );
         })}

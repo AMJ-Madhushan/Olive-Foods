@@ -1,10 +1,22 @@
 .navbar{
-    padding: 20px 0px;
+    padding: 12px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    transition: top 0.3s ease;
+}
+
+/* Adjust navbar position when banner is visible */
+body.banner-visible .navbar {
+    top: var(--banner-height, 60px); /* Dynamic banner height */
 }
 .navbar .logo{
     width: 150px;
@@ -65,9 +77,10 @@
 
 .navbar button{
     background: transparent;
-    font-size: 16px;
-    color: #161A16;
-    border: 1px solid #4E8C01;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #4E8C01;
+    border: 2px solid #4E8C01;
     padding: 10px 30px;
     border-radius: 8px;
     cursor: pointer;
@@ -77,6 +90,36 @@
 .navbar button:hover{
     background-color: #F3FFE5;
     color: #4E8C01;
+    transform: translateY(-2px);
+}
+
+.suggest-me-btn {
+    background: linear-gradient(135deg, #4E8C01, #3d6b01) !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 24px !important;
+    border-radius: 10px;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(78, 140, 1, 0.3);
+    transition: all 0.3s ease;
+    animation: pulse-btn 2s infinite;
+}
+
+@keyframes pulse-btn {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(78, 140, 1, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(78, 140, 1, 0.5);
+    }
+}
+
+.suggest-me-btn:hover {
+    background: linear-gradient(135deg, #3d6b01, #2d5201) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(78, 140, 1, 0.4) !important;
 }
 
 .navbar .active{
@@ -154,7 +197,7 @@
     position: absolute;
     display: none;
     right: 0;
-    z-index: 2000;
+    z-index: 1000;
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s ease;
@@ -215,6 +258,12 @@
     transform: scale(1.1);
 }
 @media (max-width:1050px) {
+    .navbar {
+        padding: 12px 30px;
+    }
+    body.banner-visible .navbar {
+        top: var(--banner-height, 60px);
+    }
     .navbar .logo{
         width: 140px;
     } 
@@ -236,6 +285,12 @@
     }
 }
 @media (max-width:900px) {
+    .navbar {
+        padding: 12px 20px;
+    }
+    body.banner-visible .navbar {
+        top: var(--banner-height, 60px);
+    }
     .navbar .logo{
         width: 120px;
     } 
@@ -259,6 +314,12 @@
     }
 }
 @media (max-width:750px) { 
+    .navbar {
+        padding: 12px 15px;
+    }
+    body.banner-visible .navbar {
+        top: var(--banner-height, 60px);
+    }
     .navbar-menu{
         display: none;
     }
