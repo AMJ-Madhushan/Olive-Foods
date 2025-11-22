@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
+import Banner from "./components/Banner/Banner";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/Cart";
@@ -21,6 +22,7 @@ const App = () => {
   return (
     <>
       {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
+      <Banner />
       <div className="app">
         <ToastContainer />
         <Navbar setShowLogin={setShowLogin} />
