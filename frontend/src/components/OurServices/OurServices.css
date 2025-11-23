@@ -3,6 +3,7 @@
   font-family: 'Manrope';
   color: #161A16;
   line-height: 1.6;
+  padding: 60px 0;
   background-color: white;
 }
 
@@ -37,7 +38,7 @@
 .stat-card {
   text-align: center;
   padding: 30px 20px;
-  background: #F3FFE5;
+  background: white;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(78, 140, 1, 0.1);
   transition: transform 0.3s ease;
