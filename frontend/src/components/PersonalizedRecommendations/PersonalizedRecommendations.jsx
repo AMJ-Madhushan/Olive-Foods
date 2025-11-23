@@ -128,7 +128,7 @@ const PersonalizedRecommendations = () => {
               </div>
 
               <div className="card-footer">
-                <span className="price">${item.price}</span>
+                <span className="price">LKR {item.price}</span>
                 <button
                   onClick={() => {
                     addToCart(item.foodId);

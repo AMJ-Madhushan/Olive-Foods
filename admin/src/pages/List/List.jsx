@@ -64,7 +64,7 @@ const List = ({ url }) => {
               <p className="nutritional-badge calories">{item.nutritionalInfo?.calories || 'N/A'}</p>
               <p className="nutritional-badge protein">{item.nutritionalInfo?.protein || 'N/A'}g</p>
               <p className="nutritional-badge carbs">{item.nutritionalInfo?.carbohydrates || 'N/A'}g</p>
-              <p className="price-tag">${item.price}</p>
+              <p className="price-tag">LKR {item.price}</p>
               <div className="action-buttons">
                 <span 
                   onClick={() => navigate(`/add?id=${item._id}`)} 
