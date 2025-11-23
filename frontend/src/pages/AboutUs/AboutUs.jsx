@@ -1,6 +1,7 @@
 import React from "react";
 import "./AboutUs.css";
 import PageHero from "../../components/PageHero/PageHero";
+import { assets } from "../../assets/frontend_assets/assets";
 
 export default function AboutUs() {
   return (
@@ -22,23 +23,38 @@ export default function AboutUs() {
       </section>
 
       {/* Core Values */}
-      <section className="values-section">
-        <h2>Our Core Values</h2>
-        <div className="values-cards">
-          <div className="value-card">
-            <h3>Quality First</h3>
-            <p>We partner only with the finest restaurants and ensure every meal meets our high standards for freshness and taste.</p>
-          </div>
-          <div className="value-card">
-            <h3>Customer Satisfaction</h3>
-            <p>Your happiness is our priority. We go above and beyond to ensure every order exceeds your expectations.</p>
-          </div>
-          <div className="value-card">
-            <h3>Innovation</h3>
-            <p>We continuously improve our platform with cutting-edge technology to make Olive Foods delivery faster and more convenient.</p>
-          </div>
-        </div>
-      </section>
+<section className="values-section">
+  <h2>Our Core Values</h2>
+  <div className="values-cards">
+    <div className="value-card">
+      <div className="value-icon">⭐</div>
+      <h3>Quality First</h3>
+      <p>
+        We partner only with the finest restaurants and ensure every meal
+        meets our high standards for freshness and taste.
+      </p>
+    </div>
+
+    <div className="value-card">
+      <div className="value-icon">😊</div>
+      <h3>Customer Satisfaction</h3>
+      <p>
+        Your happiness is our priority. We go above and beyond to ensure
+        every order exceeds your expectations.
+      </p>
+    </div>
+
+    <div className="value-card">
+      <div className="value-icon">💡</div>
+      <h3>Innovation</h3>
+      <p>
+        We continuously improve our platform with cutting-edge technology
+        to make Olive Foods delivery faster and more convenient.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       {/* Developer Section */}
       <section className="team-section">
@@ -46,15 +62,17 @@ export default function AboutUs() {
         <p>This application has been designed and developed by:</p>
         <div className="team-cards">
           <div className="team-card">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Janitha Madushan" />
+            <div className="profile-image-wrapper">
+              <img src={assets.profile_img} alt="Janitha Madushan" />
+            </div>
             <h3>Janitha Madushan</h3>
-            <p>Full-Stack Developer & UI/UX Designer</p>
-            <p>All Rights Reserved © 2024</p>
+            <p className="role">Full Stack Developer & UI/UX Designer</p>
+            <p className="copyright">All Rights Reserved © 2025</p>
           </div>
         </div>
       </section>
 
-      {/* Copyright Section */}
+      {/* Copyright Section
       <section className="cta-section">
         <h2>System Rights & Ownership</h2>
         <p>
@@ -65,7 +83,7 @@ export default function AboutUs() {
           <p><strong>© 2024 Janitha Madushan. All Rights Reserved.</strong></p>
           <p>This system is proprietary software developed with modern web technologies including React, Node.js, and MongoDB.</p>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

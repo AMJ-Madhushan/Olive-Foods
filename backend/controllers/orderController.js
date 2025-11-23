@@ -6,7 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // placing user order for frontend
 const placeOrder = async (req, res) => {
-  const frontend_url = "https://olive-foods-frontend-s2l9.onrender.com";
+  const frontend_url = process.env.FRONTEND_URL || "http://localhost:5173";
   try {
     const newOrder = new orderModel({
       userId: req.body.userId,
@@ -19,7 +19,7 @@ const placeOrder = async (req, res) => {
 
     const line_items = req.body.items.map((item) => ({
       price_data: {
-        currency: "usd",
+        currency: "lkr",
         product_data: {
           name: item.name,
         },
@@ -30,11 +30,11 @@ const placeOrder = async (req, res) => {
 
     line_items.push({
       price_data: {
-        currency: "usd",
+        currency: "lkr",
         product_data: {
           name: "Delivery Charges",
         },
-        unit_amount: 2 * 100,
+        unit_amount: 200 * 100,
       },
       quantity: 1,
     });

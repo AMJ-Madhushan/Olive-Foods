@@ -215,13 +215,13 @@ const Add = ({url}) => {
             </select>
           </div>
           <div className="add-price flex-col">
-            <p>Product price</p>
+            <p>Product price (LKR)</p>
             <input
               onChange={onChangeHandler}
               value={data.price}
               type="Number"
               name="price"
-              placeholder="$20"
+              placeholder="2000"
               required
             />
           </div>

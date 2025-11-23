@@ -31,7 +31,7 @@ const foodData = [
     description: "Classic Caesar salad with romaine lettuce, parmesan cheese, croutons, and Caesar dressing",
     price: 10.99,
     category: "Salads & Greens",
-    image: "food_2.png",
+    image: "https://www.pexels.com/photo/pancake-with-sliced-strawberry-376464/",
     nutritionalInfo: {
       calories: 320,
       protein: 12,
