@@ -1,8 +1,13 @@
 .recommendations-container {
+  position: relative;
+  width: 100vw;                           
+  margin-left: calc(-50vw + 50%);          
   min-height: 100vh;
   padding: 120px 40px 60px;
   background: linear-gradient(135deg, #F3FFE5 0%, #ffffff 100%);
+  box-sizing: border-box;
 }
+
 
 .recommendations-header {
   text-align: center;
