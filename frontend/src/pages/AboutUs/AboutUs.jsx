@@ -1,6 +1,7 @@
 import React from "react";
 import "./AboutUs.css";
 import PageHero from "../../components/PageHero/PageHero";
+import { assets } from "../../assets/frontend_assets/assets";
 
 export default function AboutUs() {
   return (
@@ -61,10 +62,12 @@ export default function AboutUs() {
         <p>This application has been designed and developed by:</p>
         <div className="team-cards">
           <div className="team-card">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Janitha Madushan" />
+            <div className="profile-image-wrapper">
+              <img src={assets.profile_img} alt="Janitha Madushan" />
+            </div>
             <h3>Janitha Madushan</h3>
-            <p>Web Developer & UI/UX Designer</p>
-            <p>All Rights Reserved © 2025</p>
+            <p className="role">Full Stack Developer & UI/UX Designer</p>
+            <p className="copyright">All Rights Reserved © 2025</p>
           </div>
         </div>
       </section>
