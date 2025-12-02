@@ -1,69 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Manrope';
-  scroll-behavior: smooth;
-}
-body{
-  min-height: 100vh;
-  background-color: white;
-  color: #161A16;
-}
-a{
-  text-decoration: none;
-  color: inherit;
-}
-.app{
-  width: 80%;
-  margin: auto;
-  padding-top: 80px; /* Add padding to account for fixed navbar */
-  transition: padding-top 0.3s ease;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply p-0 m-0 box-border;
+    font-family: 'Manrope', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply min-h-screen bg-white text-text;
+  }
+  
+  a {
+    @apply no-underline text-inherit;
+  }
+  
+  button {
+    @apply rounded-lg;
+  }
 }
 
-/* Adjust padding when banner is visible */
-body.banner-visible .app {
-  padding-top: calc(var(--banner-height, 60px) + 80px); /* Dynamic banner height + Navbar */
-}
-
-/* Responsive padding adjustments for fixed navbar */
-@media (max-width: 1050px) {
+@layer components {
   .app {
-    padding-top: 90px;
+    @apply w-4/5 mx-auto pt-20 transition-all duration-300 ease-in-out;
   }
-  body.banner-visible .app {
-    padding-top: calc(var(--banner-height, 60px) + 90px);
-  }
-}
-
-@media (max-width: 900px) {
-  .app {
-    padding-top: 80px;
-  }
+  
   body.banner-visible .app {
     padding-top: calc(var(--banner-height, 60px) + 80px);
   }
-}
-
-@media (max-width: 750px) {
-  .app {
-    padding-top: 70px;
+  
+  @media (max-width: 1050px) {
+    .app {
+      @apply pt-[90px];
+    }
+    body.banner-visible .app {
+      padding-top: calc(var(--banner-height, 60px) + 90px);
+    }
   }
-  body.banner-visible .app {
-    padding-top: calc(var(--banner-height, 60px) + 70px);
+  
+  @media (max-width: 900px) {
+    .app {
+      @apply pt-20;
+    }
+    body.banner-visible .app {
+      padding-top: calc(var(--banner-height, 60px) + 80px);
+    }
   }
-}
-
-@keyframes fadeIn{
-  0%{
-    opacity: 0;
+  
+  @media (max-width: 750px) {
+    .app {
+      @apply pt-[70px];
+    }
+    body.banner-visible .app {
+      padding-top: calc(var(--banner-height, 60px) + 70px);
+    }
   }
-  100%{
-    opacity: 1;
+  
+  .banner-visible {
+    top: var(--banner-height, 60px);
   }
-}
-button{
-  border-radius: 8px;
 }
