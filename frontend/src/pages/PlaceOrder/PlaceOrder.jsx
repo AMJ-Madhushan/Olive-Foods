@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./PlaceOrder.css";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -64,11 +63,11 @@ const PlaceOrder = () => {
     }
   },[token])
   return (
-    <form className="place-order" onSubmit={placeOrder}>
-      <div className="place-order-container">
-        <div className="place-order-left">
-          <p className="title">Delivery Information</p>
-          <div className="multi-fields">
+    <form className="flex items-start justify-between gap-[50px] mt-[100px] py-20 bg-light w-screen -ml-[calc(50vw-50%)] max-[800px]:flex-col max-[800px]:mt-[50px]" onSubmit={placeOrder}>
+      <div className="max-w-[1200px] mx-auto px-5 flex items-start justify-between gap-[50px] max-[800px]:flex-col">
+        <div className="w-full max-w-[max(30%,500px)]">
+          <p className="text-[30px] font-bold mb-[50px] text-text max-[800px]:text-[27px]">Delivery Information</p>
+          <div className="flex gap-2.5">
             <input
               required
               name="firstName"
@@ -76,6 +75,7 @@ const PlaceOrder = () => {
               onChange={onChangeHandler}
               type="text"
               placeholder="First name"
+              className="mb-4 w-full p-[15px] border-2 border-[#e1e5e9] rounded-lg outline-primary bg-white text-text text-base transition-[border-color] duration-300 ease-in-out focus:border-primary"
             />
             <input
               required
@@ -84,6 +84,7 @@ const PlaceOrder = () => {
               onChange={onChangeHandler}
               type="text"
               placeholder="Last name"
+              className="mb-4 w-full p-[15px] border-2 border-[#e1e5e9] rounded-lg outline-primary bg-white text-text text-base transition-[border-color] duration-300 ease-in-out focus:border-primary"
             />
           </div>
           <input
@@ -93,6 +94,7 @@ const PlaceOrder = () => {
             onChange={onChangeHandler}
             type="text"
             placeholder="Email Address"
+            className="mb-4 w-full p-[15px] border-2 border-[#e1e5e9] rounded-lg outline-primary bg-white text-text text-base transition-[border-color] duration-300 ease-in-out focus:border-primary"
           />
           <input
             required
@@ -101,8 +103,9 @@ const PlaceOrder = () => {
             onChange={onChangeHandler}
             type="text"
             placeholder="Street"
+            className="mb-4 w-full p-[15px] border-2 border-[#e1e5e9] rounded-lg outline-primary bg-white text-text text-base transition-[border-color] duration-300 ease-in-out focus:border-primary"
           />
-          <div className="multi-fields">
+          <div className="flex gap-2.5">
             <input
               required
               name="city"
@@ -110,6 +113,7 @@ const PlaceOrder = () => {
               onChange={onChangeHandler}
               type="text"
               placeholder="City"
+              className="mb-4 w-full p-[15px] border-2 border-[#e1e5e9] rounded-lg outline-primary bg-white text-text text-base transition-[border-color] duration-300 ease-in-out focus:border-primary"
             />
             <input
               required
@@ -118,9 +122,10 @@ const PlaceOrder = () => {
               onChange={onChangeHandler}
               type="text"
               placeholder="State"
+              className="mb-4 w-full p-[15px] border-2 border-[#e1e5e9] rounded-lg outline-primary bg-white text-text text-base transition-[border-color] duration-300 ease-in-out focus:border-primary"
             />
           </div>
-          <div className="multi-fields">
+          <div className="flex gap-2.5">
             <input
               required
               name="zipcode"
@@ -128,6 +133,7 @@ const PlaceOrder = () => {
               onChange={onChangeHandler}
               type="text"
               placeholder="Zip Code"
+              className="mb-4 w-full p-[15px] border-2 border-[#e1e5e9] rounded-lg outline-primary bg-white text-text text-base transition-[border-color] duration-300 ease-in-out focus:border-primary"
             />
             <input
               required
@@ -136,6 +142,7 @@ const PlaceOrder = () => {
               onChange={onChangeHandler}
               type="text"
               placeholder="Country"
+              className="mb-4 w-full p-[15px] border-2 border-[#e1e5e9] rounded-lg outline-primary bg-white text-text text-base transition-[border-color] duration-300 ease-in-out focus:border-primary"
             />
           </div>
           <input
@@ -145,30 +152,31 @@ const PlaceOrder = () => {
             onChange={onChangeHandler}
             type="text"
             placeholder="Phone"
+            className="mb-4 w-full p-[15px] border-2 border-[#e1e5e9] rounded-lg outline-primary bg-white text-text text-base transition-[border-color] duration-300 ease-in-out focus:border-primary"
           />
         </div>
-        <div className="place-order-right">
-          <div className="cart-total">
-            <h2>Cart Totals</h2>
+        <div className="w-full max-w-[max(40%,500px)]">
+          <div className="flex-1 flex flex-col gap-5">
+            <h2 className="text-2xl font-bold mb-5">Cart Totals</h2>
             <div>
-              <div className="cart-total-details">
+              <div className="flex justify-between text-[#555]">
                 <p>Subtotals</p>
                 <p>LKR {getTotalCartAmount()}</p>
               </div>
-              <hr />
-              <div className="cart-total-details">
+              <hr className="my-2.5" />
+              <div className="flex justify-between text-[#555]">
                 <p>Delivery Fee</p>
                 <p>LKR {getTotalCartAmount() === 0 ? 0 : 200}</p>
               </div>
-              <hr />
-              <div className="cart-total-details">
+              <hr className="my-2.5" />
+              <div className="flex justify-between text-[#555]">
                 <b>Total</b>
                 <b>
                   LKR {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 200}
                 </b>
               </div>
             </div>
-            <button type="submit">PROCEED TO PAYMENT</button>
+            <button type="submit" className="mt-8 border-none text-white bg-primary w-full py-3 px-0 rounded-lg cursor-pointer">PROCEED TO PAYMENT</button>
           </div>
         </div>
       </div>

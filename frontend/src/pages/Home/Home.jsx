@@ -1,5 +1,4 @@
 import React from 'react'
-import './Home.css'
 import Header from '../../components/Header/Header'
 import PersonalizedRecommendations from '../../components/PersonalizedRecommendations/PersonalizedRecommendations'
 import OurServices from '../../components/OurServices/OurServices'
