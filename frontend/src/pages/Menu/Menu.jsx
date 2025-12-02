@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react'
-import './Menu.css'
 import PageHero from '../../components/PageHero/PageHero'
 import ExploreMenu from '../../components/ExploreMenu/ExploreMenu'
 import FoodDisplay from '../../components/FoodDisplay/FoodDisplay'
@@ -24,12 +23,12 @@ const Menu = () => {
   }, [food_list]);
 
   return (
-    <div className="menu-page">
+    <div className="mt-0 mb-0 animate-fadeIn">
       <PageHero 
         header="Explore our menu"
         title="Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time."
       />
-      <div className="menu-content-wrapper">
+      <div className="bg-light w-screen -ml-[calc(50vw-50%)] p-0 mb-0">
         <ExploreMenu 
           category={category} 
           setCategory={setCategory}

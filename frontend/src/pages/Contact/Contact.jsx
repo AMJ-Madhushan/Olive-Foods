@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import './Contact.css'
 import PageHero from '../../components/PageHero/PageHero'
 
 const Contact = () => {
@@ -74,40 +73,46 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-page">
+    <div className="font-manrope min-h-screen bg-background">
       <PageHero 
         header="Contact Us"
         title="We'd love to hear from you. Send us a message and we'll respond as soon as possible."
       />
-      <div className="contact-container">
-
-        <div className="contact-content">
-          <div className="contact-info">
-            <div className="info-card">
-              <div className="info-icon">📧</div>
-              <h3>Email</h3>
-              <p>support@olivefoods.com</p>
+      <div className="max-w-[1200px] mx-auto py-[60px] px-5 max-[768px]:py-10 max-[768px]:px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[60px] items-start max-[1024px]:gap-10 max-[768px]:gap-8">
+          {/* Contact Information Section */}
+          <div className="flex flex-col gap-[30px] max-[768px]:gap-6">
+            <div className="bg-white p-[30px] rounded-[15px] shadow-[0_5px_15px_rgba(0,0,0,0.1)] text-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] border border-gray-100 max-[768px]:p-6 max-[480px]:p-5">
+              <div className="text-[3rem] mb-4 max-[768px]:text-[2.5rem]">📧</div>
+              <h3 className="text-xl text-primary mb-2.5 font-semibold max-[768px]:text-lg">Email</h3>
+              <p className="text-text leading-relaxed text-base max-[768px]:text-sm">support@olivefoods.com</p>
             </div>
-            <div className="info-card">
-              <div className="info-icon">📞</div>
-              <h3>Phone</h3>
-              <p>+1 (555) 123-4567</p>
+            
+            <div className="bg-white p-[30px] rounded-[15px] shadow-[0_5px_15px_rgba(0,0,0,0.1)] text-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] border border-gray-100 max-[768px]:p-6 max-[480px]:p-5">
+              <div className="text-[3rem] mb-4 max-[768px]:text-[2.5rem]">📞</div>
+              <h3 className="text-xl text-primary mb-2.5 font-semibold max-[768px]:text-lg">Phone</h3>
+              <p className="text-text leading-relaxed text-base max-[768px]:text-sm">+1 (555) 123-4567</p>
             </div>
-            <div className="info-card">
-              <div className="info-icon">📍</div>
-              <h3>Address</h3>
-              <p>123 Food Street<br />Delicious City, DC 12345</p>
+            
+            <div className="bg-white p-[30px] rounded-[15px] shadow-[0_5px_15px_rgba(0,0,0,0.1)] text-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] border border-gray-100 max-[768px]:p-6 max-[480px]:p-5">
+              <div className="text-[3rem] mb-4 max-[768px]:text-[2.5rem]">📍</div>
+              <h3 className="text-xl text-primary mb-2.5 font-semibold max-[768px]:text-lg">Address</h3>
+              <p className="text-text leading-relaxed text-base max-[768px]:text-sm">123 Food Street<br />Delicious City, DC 12345</p>
             </div>
           </div>
 
-          <div className="contact-form-container">
-            <form onSubmit={handleSubmit} className="contact-form">
+          {/* Contact Form Section */}
+          <div className="bg-white p-10 rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-gray-100 max-[768px]:p-8 max-[768px]:px-6 max-[480px]:p-6 max-[480px]:px-5">
+            <h2 className="text-2xl font-bold text-primary mb-6 max-[768px]:text-xl max-[768px]:mb-5">Send us a Message</h2>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6 max-[768px]:gap-5">
               <input type="hidden" name="access_key" value="hdwhjd-wdwhjd-232nwdw-djdu2" />
               <input type="hidden" name="subject" value="New Contact Form Submission from Olive Foods" />
               <input type="checkbox" name="botcheck" style={{ display: 'none' }} />
 
-              <div className="form-group">
-                <label htmlFor="name">Full Name *</label>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="name" className="font-semibold text-text text-base max-[768px]:text-sm">
+                  Full Name <span className="text-danger">*</span>
+                </label>
                 <input
                   type="text"
                   id="name"
@@ -116,11 +121,14 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="Enter your full name"
+                  className="w-full p-[15px] border-2 border-lightgray rounded-xl text-base transition-all duration-300 ease-in-out bg-white text-text focus:outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(78,140,1,0.1)] max-[768px]:p-3 max-[768px]:text-sm"
                 />
               </div>
 
-              <div className="form-group">
-                <label htmlFor="email">Email Address *</label>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="email" className="font-semibold text-text text-base max-[768px]:text-sm">
+                  Email Address <span className="text-danger">*</span>
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -129,11 +137,12 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="Enter your email address"
+                  className="w-full p-[15px] border-2 border-lightgray rounded-xl text-base transition-all duration-300 ease-in-out bg-white text-text focus:outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(78,140,1,0.1)] max-[768px]:p-3 max-[768px]:text-sm"
                 />
               </div>
 
-              <div className="form-group">
-                <label htmlFor="phone">Phone Number</label>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="phone" className="font-semibold text-text text-base max-[768px]:text-sm">Phone Number</label>
                 <input
                   type="tel"
                   id="phone"
@@ -141,11 +150,14 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Enter your phone number"
+                  className="w-full p-[15px] border-2 border-lightgray rounded-xl text-base transition-all duration-300 ease-in-out bg-white text-text focus:outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(78,140,1,0.1)] max-[768px]:p-3 max-[768px]:text-sm"
                 />
               </div>
 
-              <div className="form-group">
-                <label htmlFor="message">Message *</label>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="message" className="font-semibold text-text text-base max-[768px]:text-sm">
+                  Message <span className="text-danger">*</span>
+                </label>
                 <textarea
                   id="message"
                   name="message"
@@ -154,15 +166,20 @@ const Contact = () => {
                   required
                   rows="5"
                   placeholder="Enter your message"
+                  className="w-full p-[15px] border-2 border-lightgray rounded-xl text-base transition-all duration-300 ease-in-out bg-white text-text resize-y min-h-[120px] focus:outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(78,140,1,0.1)] max-[768px]:p-3 max-[768px]:text-sm"
                 />
               </div>
 
-              <button type="submit" disabled={isSubmitting} className="submit-btn">
+              <button 
+                type="submit" 
+                disabled={isSubmitting} 
+                className="w-full bg-gradient-to-br from-primary to-secondary text-white border-none py-[15px] px-[30px] rounded-xl text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(78,140,1,0.3)] hover:from-secondary hover:to-tertiary disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 max-[768px]:py-3 max-[768px]:text-base"
+              >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
 
               {result && (
-                <div className={`result-message ${result.includes('success') || result.includes('Thank') ? 'success' : 'error'}`}>
+                <div className={`p-4 rounded-xl text-center font-medium mt-2 ${result.includes('success') || result.includes('Thank') ? 'bg-[#d4edda] text-[#155724] border border-[#c3e6cb]' : 'bg-[#f8d7da] text-[#721c24] border border-[#f5c6cb]'}`}>
                   {result}
                 </div>
               )}
